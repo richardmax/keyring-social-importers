@@ -155,8 +155,8 @@ class Keyring_Twitter_Importer extends Keyring_Importer_Base {
 
 			// Post title can be empty for Asides, but it makes them easier to manage if they have *something*
 			$title_words = explode( ' ', strip_tags( $post->text ) );
-			$post_title  = implode( ' ', array_slice( $title_words, 0, 5 ) ); // Use the first 5 words
-			if ( count( $title_words ) > 5 )
+			$post_title  = implode( ' ', array_slice( $title_words, 0, 100 ) ); // Use the first 5 words
+			if ( count( $title_words ) > 100 )
 				$post_title .= '&hellip;';
 
 			// Parse/adjust dates
